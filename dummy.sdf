@@ -2,18 +2,19 @@
 <sdf version="1.6">
   <model name="moonie">
     <static>true</static>
-    <!-- Spawns at the specified position and orientation -->
-    <pose>0 0 -800 0.0 0.0 0</pose> <!-- Custom position and orientation -->
-
+    <!-- Main model pose (position only) -->
+    <pose>0 0 0 0 0 0</pose>
     <!-- Define a link for the model -->
     <link name="link">
-      
+      <!-- Link-specific pose for orientation -->
+      <pose>0 0 1.10 0.0 3.28 0</pose>
+
       <!-- Visual geometry (how the model looks) -->
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>file:///home/antar/rnd/playgnd/RTG/ml-depth-pro/data/moonie.dae</uri> <!-- Path to the mesh -->
-            <scale>0.1 0.1 0.1</scale> <!-- Scale applied to the mesh -->
+            <uri>file:///home/antar/rnd/playgnd/RTG/ml-depth-pro/data/moonie.dae</uri>
+            <scale>0.1 0.1 0.5</scale>
           </mesh>
         </geometry>
       </visual>
@@ -21,14 +22,12 @@
       <!-- Collision geometry (how the model collides with other objects) -->
       <collision name="collision">
         <geometry>
-          <!-- Collision mesh. Use the same mesh for collision detection -->
           <mesh>
             <uri>file:///home/antar/rnd/playgnd/RTG/ml-depth-pro/data/moonie.dae</uri>
-            <scale>0.1 0.1 0.1</scale> <!-- Scale applied to the collision mesh -->
+            <scale>0.1 0.1 0.5</scale>
           </mesh>
         </geometry>
       </collision>
     </link>
   </model>
 </sdf>
-
